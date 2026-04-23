@@ -1,0 +1,142 @@
+:root {
+  --primary: #017ae0;
+  --success: #00bc89;
+  --error: #ff5241;
+  --bg: #f5f5f5;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 16px;
+}
+
+.profile-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 24px;
+  border-radius: var(--radius);
+  border-top: 4px solid var(--primary);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: linear-gradient(to right, var(--primary), var(--success));
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.class-label {
+  display: inline-block;
+  background: var(--bg);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.average {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.subjects {
+  display: flex;
+  gap: 12px;
+}
+
+.subject {
+  flex: 1;
+  background: var(--bg);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.subject-name {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.grade {
+  font-size: 16px;
+}
+
+.grade.high {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.grade.low {
+  color: var(--error);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    width: 100%;
+  }
+
+  .subjects {
+    flex-direction: column;
+  }
+
+  .subject {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
