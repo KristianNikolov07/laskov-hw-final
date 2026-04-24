@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  color: #172033;
+}
+
+.app {
+  width: min(92vw, 420px);
+  display: grid;
+  gap: 12px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid #d9e0ea;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 17px;
+  box-shadow: 0 8px 22px rgba(32, 45, 68, 0.08);
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background: #16a34a;
+}
+
+.status-dot.away {
+  background: #facc15;
+}
+
+.status-dot.offline {
+  background: #9ca3af;
+}
+
+.status-text {
+  line-height: 1.35;
+}
