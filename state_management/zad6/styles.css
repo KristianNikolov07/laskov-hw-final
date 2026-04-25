@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.todo-app {
+  width: min(100%, 760px);
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid #d8e1ee;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 28px;
+}
+
+.add-form,
+.search-row {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.add-form {
+  grid-template-columns: 1fr auto;
+}
+
+input {
+  min-height: 42px;
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0 12px;
+  font: inherit;
+}
+
+button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 14px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.filters button {
+  background: #e2e8f0;
+  color: #172033;
+}
+
+.filters button.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.todo-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.todo-item input {
+  width: 20px;
+  min-height: 20px;
+}
+
+.todo-text.done {
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  background: #b91c1c;
+}
+
+.empty-state {
+  padding: 22px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #64748b;
+  text-align: center;
+}
+
+.stats {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #16a34a;
+  transition: width 160ms ease;
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 20px;
+  }
+
+  .add-form,
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}

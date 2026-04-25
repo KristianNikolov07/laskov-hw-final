@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.counter-card {
+  width: min(100%, 520px);
+  padding: 28px;
+  border: 1px solid #d8e1ee;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+}
+
+.counter-title {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.counter-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #eef4ff;
+}
+
+.counter-label {
+  font-size: 15px;
+  color: #536178;
+}
+
+.counter-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.reset-button {
+  background: #64748b;
+}
+
+.reset-button:hover {
+  background: #475569;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.history-count {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.history-list {
+  min-height: 88px;
+  max-height: 180px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.history-list li:last-child {
+  border-bottom: 0;
+}
+
+.history-empty {
+  padding: 14px 12px;
+  color: #64748b;
+}
+
+.history-action {
+  font-weight: 700;
+}
+
+.history-result {
+  color: #536178;
+}
+
+@media (max-width: 460px) {
+  .counter-card {
+    padding: 20px;
+  }
+
+  .button-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .counter-value {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
